@@ -56,7 +56,7 @@ write.csv2(taxaBOLD_EASIN_matk_statsfinal, file="taxaBOLD_EASIN_stats_matk.csv")
 
 #Download all genbank data matk>500
 search_genbank_matk <- function(x){
-  query2 <- paste(x, "[Organism] AND ((megakaryocyte-associated tyrosine kinase[Gene] OR CHK[Gene] OR CTK[Gene] OR HHYLTK[Gene] OR HYL[Gene] OR HYLTK[Gene] OR matk[Gene]) AND (500[SLEN] : 3000[SLEN]))")
+  query2 <- paste(x, "[Organism] AND (matk[Gene]) AND (500[SLEN] : 3000[SLEN]))")
   matk<-entrez_search(db="nuccore", term=query2, retmax=10000)$count
 }
 
